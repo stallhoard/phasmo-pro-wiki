@@ -172,7 +172,7 @@ const App: React.FC = () => {
               <div className="h-[350px]">
                 <InputArea 
                   title="Ghosts" 
-                  description="Access the comprehensive Ghost database. Interactive evidence filters, hidden traits, and speed thresholds."
+                  description="The comprehensive information about ghosts."
                   icon={<UserGroupIcon />}
                   onClick={() => handleGenerate('GHOSTS')}
                   isGenerating={isGenerating} 
@@ -182,7 +182,7 @@ const App: React.FC = () => {
               <div className="h-[350px]">
                 <InputArea 
                   title="Mechanics" 
-                  description="Explore the math behind the horror. Sanity calculators, looping geometry, and hidden item statistics."
+                  description="How ghost thinks and behaves, advanced mechanics and ghost activity calculator!"
                   icon={<CogIcon />}
                   onClick={() => handleGenerate('MECHANICS')}
                   isGenerating={isGenerating} 
