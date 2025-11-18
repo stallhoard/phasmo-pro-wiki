@@ -17,16 +17,22 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
+          # removed caching bc it requires a lockfile you don't seem to have
 
       - name: Install dependencies
-        run: npm ci
+        # npm ci crashes without a lockfile. npm install generates one.
+        # this is slower and less deterministic, but it runs.
+        run: npm install
 
       - name: Build
         run: npm run build
         env:
-          # WARNING: This exposes your API key in the client-side bundle.
-          # Make sure to restrict this key in Google Cloud Console to your GitHub Pages domain.
+          # i added common prefixes here. your code needs to reference the one matching your framework.
+          # e.g. import.meta.env.VITE_GEMINI_API_KEY
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          VITE_GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          NEXT_PUBLIC_GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          REACT_APP_GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
