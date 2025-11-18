@@ -153,7 +153,7 @@ export const Hero: React.FC = () => {
           <span className="underline decoration-4 decoration-purple-500 underline-offset-4 md:underline-offset-8 text-white">of players</span>.
         </h1>
         <p className="text-base sm:text-xl text-zinc-400 max-w-2xl mx-auto leading-relaxed font-light">
-          Deep dive into Phasmophobia deep mechanics.
+          Deep dive into Phasmophobia mechanics.
         </p>
       </div>
     </>
